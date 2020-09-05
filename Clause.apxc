@@ -5,7 +5,7 @@ global class Clause {
   @future (callout=true)
   public static void triggerContract(String contractId, String triggerOperationType, String json) {
     // replace <CLAUSE_ORG_ID> with your Clause organization id
-    String clauseOrgId = '5ee8a0393a309f001b895f08';
+    String clauseOrgId = '<CLAUSE_ORG_ID>';
     Http h = new Http();
     HttpRequest req = new HttpRequest();
     req.setHeader('Content-Type', 'application/json');      
