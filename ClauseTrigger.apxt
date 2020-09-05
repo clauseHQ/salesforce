@@ -3,10 +3,10 @@
  * insert or update of WorkOrder entities, sending the new entity to
  * a Clause contract.
  */
-trigger ClauseTrigger on WorkOrder (after upsert) {
+trigger ClauseTrigger on WorkOrder (after insert, after update) {
     for (WorkOrder w : Trigger.new) {
         // replace <CLAUSE_CONTRACT_ID> with the 
         // clause contract id linked to this entity
-    	Clause.triggerContract( "<CLAUSE_CONTRACT_ID>", Trigger.operationType.name(), JSON.serialize(w) );
+    	Clause.triggerContract( '<CLAUSE_CONTRACT_ID>', Trigger.operationType.name(), JSON.serialize(w) );
     }
 }
